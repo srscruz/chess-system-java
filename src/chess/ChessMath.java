@@ -30,19 +30,24 @@ public class ChessMath {
 		Position target = targetPosition.toPosition();
 		ValidateSoucePosition(source);
 		Piece capturedPiece = makeMove(source, target);
-		return (ChessPiece)capturedPiece;
+		return (ChessPiece) capturedPiece;
 
 	}
+
 	private Piece makeMove(Position source, Position target) {
 		Piece p = board.removePiece(source);
 		Piece CapturedPiece = board.removePiece(target);
 		board.placePiece(p, target);
 		return CapturedPiece;
-	} 
-	
+	}
+
 	private void ValidateSoucePosition(Position position) {
 		if (!board.thereIsAPiece(position)) {
 			throw new ChessException("Não exite peça na posiçao de origem!");
+
+		}
+		if (!board.piece(position).isTherePossibleMove()) {
+			throw new ChessException("Não existem movimentos possiveis para esta peça!");
 
 		}
 	}
