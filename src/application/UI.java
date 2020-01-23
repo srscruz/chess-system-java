@@ -7,7 +7,7 @@ import chess.ChessPiece;
 import chess.ChessPosition;
 import chess.Color;
 
-public class IO {
+public class UI {
 	
 	public static final String ANSI_RESET = "\u001B[0m";
 	public static final String ANSI_BLACK = "\u001B[30m";
@@ -38,6 +38,8 @@ public class IO {
 			 throw new InputMismatchException("Erro ao tentar informar posição, valor valido é de a1 - h8");
 			 
 		 }
+		 
+		 
 	}
 	
 	public static void printBoard(ChessPiece[][] pieces) {
